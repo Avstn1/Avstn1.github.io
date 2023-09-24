@@ -221,6 +221,7 @@ deleteButton.addEventListener("click", function () {
     imageDisplay.querySelector("img").src = latestImage.url;
     imageDisplay.querySelector(".image_display_title").textContent = latestImage.title;
     imageDisplay.querySelector(".image_display_author").textContent = latestImage.author;
+    displayComments(page);
 });
 
 
@@ -244,7 +245,8 @@ commentSubmitButton.addEventListener("click", function () {
     const commentId = Date.now().toString();
     const commentUser = document.getElementById("comment_name").value;
     const commentText = document.getElementById("comment_input").value;
-    if(commentUser !== "" && commentText !== "") {
+    const placeholderExists = getImages();
+    if(commentUser !== "" && commentText !== "" && placeholderExists.length > 0) {
         addComment(commentId, commentUser, commentText, imageDisplay.id);
         // Clear the form
         document.getElementById("comment_name").value = "";

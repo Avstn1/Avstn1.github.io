@@ -98,6 +98,8 @@
     padding: 10px;
     width: 300px;
     color: #333;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 .image_display_author {
@@ -105,6 +107,8 @@
     font-weight: bold;
     margin-bottom: 20px;
     color: #555;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 .image_delete {

@@ -33,8 +33,8 @@ export function getLatestImage() {
         const mockImage = {
             imageId: 'mock',
             title: 'Mock image',
-            author: 'Mock author',
-            url: "../media/no_image.png",
+            author: 'Mock Author',
+            url: "webgallery/media/no_image.png",
         };
         return mockImage;
     }
@@ -86,11 +86,24 @@ export function addImage(title, author, url) {
 export function deleteImage(imageId) {
     const images = getImages();
     const imageIndex = images.findIndex(image => image.imageId === imageId);
+    deleteAllComments(imageId);
     if (imageIndex !== -1) {
         images.splice(imageIndex, 1);
         localStorage.setItem('images', JSON.stringify(images));
     }
+    
 }
+
+export function deleteAllComments(imageId) {
+    
+    const comments = getComments();
+    for(const comment in comments) {
+        if(comment.imageId === imageId) {
+            deleteComment(comment.commentId);
+        }
+    }
+}
+
 
 // add a comment to an image
 export function addComment(commentId, author, content, imageId) {
