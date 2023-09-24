@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Web Gallery</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="webgallery/style/form.css">
+        <link rel="stylesheet" href="webgallery/style/gallery.css">
+        <link rel="stylesheet" href="webgallery/style/comment_form.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+
+        <script type="module" src="webgallery/js/api.mjs"></script>
+        <script type="module" src="webgallery/js/index.mjs"></script>
+    </head>
+
+    <body class="body">
+
+        <div class="complex_form_container" id="add_image_popup">
+            <!-- Holds pop up for adding an image -->
+        </div>
+
+        <div class="header">
+            <h1 class="logo"> 
+                WebGal
+            </h1>
+            <button class="image_toggle" id="image_toggle">
+                Add An Image
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <form class="sidebar_container" id="sidebar"> 
+                <div class="sidebar_title">Add An Image</div>
+                <input 
+                    class="sidebar_input"
+                    type="text" 
+                    name="title" 
+                    placeholder="Title" 
+                    id = "title"
+                    required
+                />
+                <input 
+                    class="sidebar_input"
+                    type="text"
+                    name="author"
+                    placeholder="Author"
+                    id = "author"
+                    required
+                />
+                <input 
+                    class="sidebar_input"
+                    type="text" 
+                    name="url" 
+                    placeholder="URL" 
+                    id = "url"
+                    required
+                />
+                <button class="sidebar_button" type="submit" id="close_sidebar">Add</button>
+                <button class="sidebar_cancel" type="button" id="cancel_sidebar">Cancel</button>
+            </form>
+        </div>
+
+        <h1 class="web_title">Welcome to the Web Gallery</h1>
+        <p class="web_description"> Browse through images, share your thoughts, and add your own unique images!</p>
+
+
+        <div class="image_container">
+            <button class="left_arrow" id="left_arrow"></button>
+
+
+            <div id="display_image">
+                
+            </div>
+
+            <button class="right_arrow" id="right_arrow"></button>
+        </div>
+
+
+        <div class="comment_section" id="comment_section">
+
+
+            <div class="comment_form_container" id="comment_form_container">
+                <div class="comment_title">Comments</div>
+                <input type="text" class="comment_name" id="comment_name" placeholder="Name" maxlength="20" required>
+                <input type="text" class="comment_input" id="comment_input" placeholder="Add a comment..." maxlength="900" required>
+                <button class="comment_cancel" id="comment_cancel">Cancel</button>
+                <button class="comment_submit" id="comment_submit">Comment</button>
+            </div>
+            <button class="comment_back" id="comment_back">&lt</button>
+            <button class="comment_next" id="comment_next">></button>
+
+            <div id="comment_container">
+                <!-- Holds all comments -->
+  
+            </div>
+
+        </div>
+
+        <footer>
+            <a href="credits.html">credits</a>
+        </footer>
+    </body>
+</html>
+
